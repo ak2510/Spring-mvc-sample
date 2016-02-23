@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.ajay</groupId>
-	<artifactId>social-integration</artifactId>
+	<artifactId>demo</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>social-integration Maven Webapp</name>
@@ -80,13 +80,7 @@
 			<artifactId>hibernate-jpa-2.1-api</artifactId>
 			<version>${hibernate.jpa.version}</version>
 		</dependency>
-		<dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>${google.guava.version}</version>
-        </dependency>
-
-
+		
 		<!-- Jackson JSON Processor Dependencies start -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
@@ -150,7 +144,7 @@
 				<version>2.2</version>
 				<configuration>
 					<port>8081</port>
-					<path>/social</path>
+					<path>/demo</path>
 				</configuration>
 			</plugin>
 		</plugins>

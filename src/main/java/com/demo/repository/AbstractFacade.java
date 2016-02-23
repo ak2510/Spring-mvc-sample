@@ -31,35 +31,20 @@ public abstract class AbstractFacade<T> implements BaseFacade<T> {
      * @return the entity manager
      */
     protected abstract EntityManager getEntityManager();
-
-    /*
-     * (non-Javadoc)
-     * 
-     * @see com.shc.bms.model.facade.base.BaseFacade#refresh(java.lang.Object)
-     */
+    
     @Override
     public T refresh(T entity) {
 	this.getEntityManager().refresh(entity);
 	return entity;
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see com.shc.bms.model.facade.base.BaseFacade#create(java.lang.Object)
-     */
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
     public T create(T entity) {
 	this.getEntityManager().persist(entity);
 	return entity;
     }
-
-    /*
-     * (non-Javadoc)
-     * 
-     * @see com.shc.bms.model.facade.base.BaseFacade#edit(java.lang.Object)
-     */
+   
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
     public T edit(T entity) {
@@ -67,32 +52,17 @@ public abstract class AbstractFacade<T> implements BaseFacade<T> {
 	return entity;
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see com.shc.bms.model.facade.base.BaseFacade#remove(java.lang.Object)
-     */
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
     public void remove(T entity) {
 	this.getEntityManager().remove(this.getEntityManager().merge(entity));
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see com.shc.bms.model.facade.base.BaseFacade#find(java.lang.Long)
-     */
     @Override
     public T find(Object primaryKeyObject) {
 	return this.getEntityManager().find(entityClass, primaryKeyObject);
     }
-
-    /*
-     * (non-Javadoc)
-     * 
-     * @see com.shc.bms.model.facade.base.BaseFacade#findAll()
-     */
+  
     @Override
     @SuppressWarnings("rawtypes")
     public List<T> findAll() {
@@ -102,22 +72,12 @@ public abstract class AbstractFacade<T> implements BaseFacade<T> {
 	return this.getEntityManager().createQuery(cq).getResultList();
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see com.shc.bms.model.facade.base.BaseFacade#persist(java.util.List)
-     */
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
     public void persist(T entity) {
 	this.getEntityManager().persist(entity);
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see com.shc.bms.model.facade.base.BaseFacade#evict(java.util.List)
-     */
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
     public void evict(T entity) {
