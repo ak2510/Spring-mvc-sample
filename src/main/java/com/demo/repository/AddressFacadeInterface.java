@@ -1,5 +1,7 @@
 package com.demo.repository;
 
-public class AddressFacadeInterface {
+import com.demo.model.entity.base.ext.AddressMaster;
+
+public interface AddressFacadeInterface extends BaseFacade<AddressMaster> {
 
 }

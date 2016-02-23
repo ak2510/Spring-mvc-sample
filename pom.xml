@@ -74,6 +74,17 @@
 		</dependency>
 
 		<!-- Spring Dependencies end -->
+		
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.1-api</artifactId>
+			<version>${hibernate.jpa.version}</version>
+		</dependency>
+		<dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${google.guava.version}</version>
+        </dependency>
 
 
 		<!-- Jackson JSON Processor Dependencies start -->
